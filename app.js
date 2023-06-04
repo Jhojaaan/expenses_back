@@ -4,12 +4,10 @@ const { db } = require('./db/db');
 const {readdirSync} = require('fs')
 const app = express()
 
-console.log('Entra');
 require('dotenv').config()
-console.log('Pasa');
+
 
 const PORT = process.env.PORT || 5000
-console.log('Puerto asignado');
 
 //middlewares
 app.use(express.json())
