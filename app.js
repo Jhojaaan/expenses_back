@@ -18,7 +18,7 @@ readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + 
 
 
 const server = () => {
-    // db()
+    db()
     app.listen(PORT, () => {
         console.log('listening to port:', PORT)
     })
@@ -26,16 +26,3 @@ const server = () => {
 
 server()
 
-// const express = require('express');
-// const cors = require('cors');
-// const app = express();
-
-// app.use(cors());
-
-// app.get('/', (req, res) => {
-//   res.send('¡Hola desde el backend!');
-// });
-
-// app.listen(5000, () => {
-//   console.log('Servidor iniciado en el puerto 5000');
-// });
