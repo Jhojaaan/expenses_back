@@ -19,7 +19,7 @@ readdirSync("./routes").map((route) =>
 
 
 const server = () => {
-    db();
+    // db();
     app.listen(PORT, () => {
         console.log("listening to port:", PORT);
     });
