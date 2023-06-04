@@ -1,40 +1,43 @@
-// const express = require('express')
-// const cors = require('cors');
-// const { db } = require('./db/db');
-// const {readdirSync} = require('fs')
-// const app = express()
-
-// require('dotenv').config()
-
-// const PORT = process.env.PORT || 5000
-
-// //middlewares
-// app.use(express.json())
-// app.use(cors())
-
-// //routes
-// readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
-
-
-// const server = () => {
-//     db()
-//     app.listen(PORT, () => {
-//         console.log('listening to port:', PORT)
-//     })
-// }
-
-// server()
-
-const express = require('express');
+const express = require('express')
 const cors = require('cors');
-const app = express();
+const { db } = require('./db/db');
+const {readdirSync} = require('fs')
+const app = express()
 
-app.use(cors());
+console.log('Entra');
+require('dotenv').config()
+console.log('Pasa');
 
-app.get('/', (req, res) => {
-  res.send('¡Hola desde el backend!');
-});
+const PORT = process.env.PORT || 5000
+console.log('Puerto asignado');
 
-app.listen(5000, () => {
-  console.log('Servidor iniciado en el puerto 5000');
-});
+//middlewares
+app.use(express.json())
+app.use(cors())
+
+//routes
+readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
+
+
+const server = () => {
+    db()
+    app.listen(PORT, () => {
+        console.log('listening to port:', PORT)
+    })
+}
+
+server()
+
+// const express = require('express');
+// const cors = require('cors');
+// const app = express();
+
+// app.use(cors());
+
+// app.get('/', (req, res) => {
+//   res.send('¡Hola desde el backend!');
+// });
+
+// app.listen(5000, () => {
+//   console.log('Servidor iniciado en el puerto 5000');
+// });
