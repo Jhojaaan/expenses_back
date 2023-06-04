@@ -26,6 +26,9 @@ const server = () => {
 };
 
 app.get("/", (req, res) => {
+    app.listen(PORT, () => {
+        console.log("listening to port:", PORT);
+    });
     // res.send('¡Hola desde el backend!');
-    server();
+    // server();
 });
