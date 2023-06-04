@@ -17,14 +17,21 @@ app.use(cors())
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
 
 
-const server = () => {
-    db()
-    app.listen(PORT, () => {
-        console.log('listening to port:', PORT)
-    })
-}
+app.get('/', (req, res) => {
+   app.listen(PORT,() => {
+    console.log("Puerto:", PORT);
+    console.log(req);
+   })
+});
 
-server()
+//  const server = () => {
+//     db()
+//     app.listen(PORT, () => {
+//         console.log('listening to port:', PORT)
+//     })
+// }
+
+// server()
 
 // const express = require('express');
 // const cors = require('cors');
