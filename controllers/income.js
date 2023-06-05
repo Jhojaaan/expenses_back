@@ -30,6 +30,7 @@ exports.addIncome = async (req, res) => {
 }
 
 exports.getIncomes = async (req, res) =>{
+    console.log('Entra al ctrl');
     const {username} = req.params;
 
     try {
